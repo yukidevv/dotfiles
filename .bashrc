@@ -127,3 +127,6 @@ source ~/perl5/perlbrew/etc/bashrc
 
 #GOPATH通すよ
 #export PATH=$PATH:$(go env GOPATH)/bin
+
+#perl6用Path通し
+export PATH=/home/noma/rakudo/install/bin/:/home/noma/rakudo/install/share/perl6/site/bin:$PATH
