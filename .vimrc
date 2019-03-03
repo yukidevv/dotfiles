@@ -64,7 +64,7 @@ set tabstop=4
 set shiftwidth=4
 
 "対応する括弧をハイライト
-set showmatch
+"set showmatch
 
 "コードの色分け
 colorscheme molokai
