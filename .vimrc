@@ -86,3 +86,11 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 "vim-gitgutter用　変更箇所ハイライト
 let g:gitgutter_highlight_lines = 1
+
+" 
+set splitbelow
+
+set termwinsize=7x0
+
+" 隠しファイルをデフォルトで表示させる
+let NERDTreeShowHidden = 1
