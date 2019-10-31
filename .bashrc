@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 #perlbrewパス通し
-source ~/perl5/perlbrew/etc/bashrc
+#source ~/perl5/perlbrew/etc/bashrc
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
@@ -130,3 +130,6 @@ source ~/perl5/perlbrew/etc/bashrc
 
 #perl6用Path通し
 #export PATH=/home/noma/rakudo/install/bin/:/home/noma/rakudo/install/share/perl6/site/bin:$PATH
+
+#sdkコマンド用パス通し
+source /home/yuki/.sdkman/bin/sdkman-init.sh
