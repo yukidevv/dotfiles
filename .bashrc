@@ -133,3 +133,9 @@ fi
 
 #sdkコマンド用パス通し
 source /home/yuki/.sdkman/bin/sdkman-init.sh
+
+#nodebrewパス通し
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+#python3をpythonで呼び出し
+alias python='python3'
