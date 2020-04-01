@@ -132,10 +132,13 @@ fi
 #export PATH=/home/noma/rakudo/install/bin/:/home/noma/rakudo/install/share/perl6/site/bin:$PATH
 
 #sdkコマンド用パス通し
-source /home/yuki/.sdkman/bin/sdkman-init.sh
+#source /home/yuki/.sdkman/bin/sdkman-init.sh
 
 #nodebrewパス通し
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+#export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 #python3をpythonで呼び出し
 alias python='python3'
+
+#capsキーをctrlキーに変更する
+setxkbmap -option ctrl:nocaps
