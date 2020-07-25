@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 #perlbrewパス通し
-#source ~/perl5/perlbrew/etc/bashrc
+source ~/perl5/perlbrew/etc/bashrc
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
