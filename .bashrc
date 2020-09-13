@@ -121,9 +121,9 @@ fi
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-#/usr/bin/perlのjavaコマンド使いたいからちょっと消えてもらう
-#export SDKMAN_DIR="/home/noma/.sdkman"
-#[[ -s "/home/noma/.sdkman/bin/sdkman-init.sh" ]] && source "/home/noma/.sdkman/bin/sdkman-init.sh"
+#/usr/bin/javaのjavaコマンド使いたいからちょっと消えてもらう
+export SDKMAN_DIR="/home/noma/.sdkman"
+[[ -s "/home/noma/.sdkman/bin/sdkman-init.sh" ]] && source "/home/noma/.sdkman/bin/sdkman-init.sh"
 
 #GOPATH通すよ
 #export PATH=$PATH:$(go env GOPATH)/bin
