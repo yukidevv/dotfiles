@@ -141,4 +141,4 @@ export SDKMAN_DIR="/home/noma/.sdkman"
 alias python='python3'
 
 #capsキーをctrlキーに変更する
-setxkbmap -option ctrl:nocaps
+#setxkbmap -option ctrl:nocaps
