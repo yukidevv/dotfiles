@@ -122,8 +122,8 @@ fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 #/usr/bin/javaのjavaコマンド使いたいからちょっと消えてもらう
-export SDKMAN_DIR="/home/noma/.sdkman"
-[[ -s "/home/noma/.sdkman/bin/sdkman-init.sh" ]] && source "/home/noma/.sdkman/bin/sdkman-init.sh"
+#export SDKMAN_DIR="/home/noma/.sdkman"
+#[[ -s "/home/noma/.sdkman/bin/sdkman-init.sh" ]] && source "/home/noma/.sdkman/bin/sdkman-init.sh"
 
 #GOPATH通すよ
 #export PATH=$PATH:$(go env GOPATH)/bin
@@ -138,7 +138,15 @@ export SDKMAN_DIR="/home/noma/.sdkman"
 #export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 #python3をpythonで呼び出し
-alias python='python3'
+#alias python='python3'
 
 #capsキーをctrlキーに変更する
 #setxkbmap -option ctrl:nocaps
+
+source ~/perl5/perlbrew/etc/bashrc
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export DISPLAY=`ip route | grep 'default via' | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'`:0
