@@ -1,49 +1,61 @@
-"Note: Skip initialization for vim-tiny or vim-small.
-if 0 | endif
-
+"dein Scripts-----------------------------
 if &compatible
-    set nocompatible               " Be iMproved
+  set nocompatible               " Be iMproved
 endif
 
-"Required:
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-
-"Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
 " Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
+" Required:
+if dein#load_state('~/.cache/dein')
+  " XDG base direcory compartible
+  let g:dein#cache_directory = $HOME . '/.cache/dein'
 
-"1
-NeoBundle 'Yggdroot/indentLine'
+  call dein#begin('~/.cache/dein')
 
-"2
-" ファイルをtree表示してくれる
-NeoBundle 'scrooloose/nerdtree'
+  " Let dein manage dein
+  " Required:
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-"3 加速させられたjk
-NeoBundle 'rhysd/accelerated-jk'
+  " Add or remove your plugins here like this:
+  "call dein#add('Shougo/neosnippet.vim')
+  "call dein#add('Shougo/neosnippet-snippets')
 
-"4 perl補完プラグイン
-NeoBundle 'https://github.com/c9s/perlomni.vim'
+  " ~~~ ここからtomlファイルを利用するための設定 ~~~
+  " 導入するプラグインを記載したtomlファイルのパスを記載する
+   let s:toml_dir  = $HOME . '/.vim/rc' 
+   let s:toml      = s:toml_dir . '/dein.toml'
+   let s:lazy_toml = s:toml_dir . '/dein_lazy.toml'
+  
+   " tomlファイルをキャッシュしておくための記述
+   call dein#load_toml(s:toml,      {'lazy': 0})
+   call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  " ~~~ tomlのための設定はここまで ~~~
 
-"5 molokaischeme
-NeoBundle 'tomasr/molokai'
+  " Required:
+  call dein#end()
+  call dein#save_state()
 
-"6 gitgutter
-NeoBundle 'airblade/vim-gitgutter'
+" plugin remove check {{{
+let s:removed_plugins = dein#check_clean()
+if len(s:removed_plugins) > 0
+  call map(s:removed_plugins, "delete(v:val, 'rf')")
+  call dein#recache_runtimepath()
+endif
+" }}}
+ 
+endif
 
-"7 vim-fugitive
-NeoBundle 'tpope/vim-fugitive'
+" Required:
+filetype plugin indent on
+syntax enable
 
-call neobundle#end()
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
 
-NeoBundleCheck
+"End dein Scripts-------------------------
 
 "Required:
 filetype plugin indent on
