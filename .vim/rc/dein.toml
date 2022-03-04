@@ -1,0 +1,17 @@
+# repoで読み込みたいプラグインのGithubレポジトリを指定する
+
+#加速させられたjk
+[[plugins]]
+repo = 'rhysd/accelerated-jk'
+
+#molokai
+[[plugins]]
+repo = 'tomasr/molokai'
+
+#ファイルツリーを表示
+#[[plugins]]
+#repo = 'scrooloose/nerdtree'
+
+#indentLine
+#[[plugins]]
+#repo = 'Yggdroot/indentLine'
