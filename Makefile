@@ -2,7 +2,7 @@
 all:bash tmux vim
 
 .PHONY: bash
-git:
+bash:
 	ln -vsf ${PWD}/.bash_profile ${HOME}/.bash_profile
 	ln -vsf ${PWD}/.bashrc ${HOME}/.bashrc
 
