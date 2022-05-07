@@ -1,3 +1,5 @@
+DOT_FILES = .bash_profile .bashrc .tmux.conf .vimrc
+
 .PHONY: all
 all:bash tmux vim
 
@@ -18,3 +20,13 @@ vim:
 	mkdir -p ~/.cache/dein
 	cd ~/.cache/dein && curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 	cd ~/.cache/dein &&	sh ./installer.sh ~/.cache/dein
+
+clean:$(foreach f, $(DOT_FILES), unlink-dot-file-$(f))
+
+list:
+	cd brew && . ./dump.sh
+
+unlink-dot-file-%: %
+	echo "Remove symlink $(HOME)/$<"
+	unlink $(HOME)/$<
+
