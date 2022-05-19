@@ -10,7 +10,8 @@ alias ls='ls --color'
 alias ll='ls -alF'
 alias la='ls -A'
 alias grep='grep --color=auto'     
-
+#extended cal(printing holiday)
+alias calx='cal -3; curl -s https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv | iconv -f SHIFT-JIS -t UTF-8 | grep -E "`date -v-1m '+%Y/%-m/'`|`date '+%Y/%-m/'`|`date -v+1m '+%Y/%-m/'`"'
 #golang
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
