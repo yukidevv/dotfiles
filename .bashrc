@@ -3,8 +3,9 @@ export PS1='\[\e[33m\]\u@\h:\[\e[32m\]\w\[\e[0m\]\$ '
 export EDITOR='vim'
 
 #homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
+if [ "$(uname)" == 'Darwin' ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 #alias
 export LSCOLORS=Cxfxcxdxbxegedabagacad
 alias ls='ls --color'
