@@ -94,3 +94,9 @@ set splitbelow
 set termwinsize=7x0
 
 set belloff=all
+
+"visualモードのハイライトカラーを変更
+highlight Visual ctermbg=102
+
+"文字列検索時のハイライトカラーを設定
+set hlsearch
