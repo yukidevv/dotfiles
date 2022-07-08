@@ -20,6 +20,12 @@ export PATH=$PATH:$GOPATH/bin
 #Python
 export PATH=$PATH:~/Library/Python/3.8/bin
 
+#gcc for mac
+if [ "$(uname)" == 'Darwin' ]; then
+  alias gcc='gcc-11'
+  alias g++='g++-11'
+fi
+
 #nvm
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
