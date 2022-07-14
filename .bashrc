@@ -32,4 +32,7 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 #Rust
-. "$HOME/.cargo/env"
+if [ "$(uname)" == 'Darwin' ]; then
+  . "$HOME/.cargo/env"
+fi
+
