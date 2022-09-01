@@ -14,12 +14,7 @@ tmux:
 
 .PHONY: vim
 vim:	
-	test -L ${HOME}/.vim || rm -rf ${HOME}/.vim
-	ln -vsfn ${PWD}/.vim ${HOME}/.vim
 	ln -vsf ${PWD}/.vimrc ${HOME}/.vimrc
-	mkdir -p ~/.cache/dein
-	cd ~/.cache/dein && curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-	cd ~/.cache/dein &&	sh ./installer.sh ~/.cache/dein
 
 clean:$(foreach f, $(DOT_FILES), unlink-dot-file-$(f))
 
