@@ -5,8 +5,8 @@ if [ "$(uname)" == 'Darwin' ]; then
   export PS1='\[\e[33m\]\u@\h:\[\e[32m\]\w\[\e[0m\]\$ '
   eval "$(/opt/homebrew/bin/brew shellenv)"
   . "$HOME/.cargo/env"
-  alias gcc='gcc-11'
-  alias g++='g++-11'
+  alias gcc='gcc-12'
+  alias g++='g++-12'
 else
   export PS1='\[\e[31;42m\]\u@\h:\[\e[31m\]\w\[\e[0m\]\$ '
 fi

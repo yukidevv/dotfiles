@@ -33,4 +33,8 @@ highlight Visual ctermbg=102
 "文字列検索時のハイライトカラーを設定
 set hlsearch
 
+#colorscheme
+colorscheme habamax
+
+#color of comment
 highlight Comment ctermfg=green
