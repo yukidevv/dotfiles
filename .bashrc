@@ -24,8 +24,11 @@ alias grep='grep --color=auto'
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-#Python
-export PATH=$PATH:~/Library/Python/3.8/bin
+#pyenv+venv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 
 #nvm
 export NVM_DIR="$HOME/.nvm"
