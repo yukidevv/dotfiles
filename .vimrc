@@ -19,6 +19,7 @@ set ruler
 
 "autoindentを有効にする
 set autoindent 
+set smartindent
 set nocompatible
 
 "ターミナル設定
