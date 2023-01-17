@@ -1,7 +1,7 @@
-DOT_FILES = .bash_profile .bashrc .tmux.conf .vimrc
+DOT_FILES = .bash_profile .bashrc .tmux.conf .vimrc ..xmobarrc .Xresources
 
 .PHONY: all
-all:bash tmux vim
+all:bash tmux vim xmonad
 
 .PHONY: bash
 bash:
@@ -15,6 +15,13 @@ tmux:
 .PHONY: vim
 vim:	
 	ln -vsf ${PWD}/.vimrc ${HOME}/.vimrc
+
+.PHONY: xmonad 
+xmonad:
+	ln -vsf ${PWD}/.xmobarrc ${HOME}/.xmobarrc
+	ln -vsf ${PWD}/.Xresources ${HOME}/.Xresources
+	test -L ${HOME}/.xmonad || rm -rf ${HOME}/.xmonad
+	ln -vsfn ${PWD}/.xmonad ${HOME}/.xmonad
 
 clean:$(foreach f, $(DOT_FILES), unlink-dot-file-$(f))
 

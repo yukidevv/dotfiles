@@ -34,7 +34,7 @@ highlight Visual ctermbg=102
 set hlsearch
 
 "colorscheme
-colorscheme habamax
+"colorscheme habamax
 
 "color of comment
 highlight Comment ctermfg=green
