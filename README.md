@@ -13,10 +13,11 @@ Or they can be executed one at a time
 `$ make bash`  
 `$ make vim`  
 `$ make tmux`  
+`$ make xmonad`
 
 To delete a group of dotfiles, perform the following  
 `$ make clean`  
 
-## Bonus
+## Bonus(for Mac)
 Outputs a list of what has been installed by brew  
 `$ make list`  

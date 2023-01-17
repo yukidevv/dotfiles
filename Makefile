@@ -1,4 +1,4 @@
-DOT_FILES = .bash_profile .bashrc .tmux.conf .vimrc ..xmobarrc .Xresources
+DOT_FILES = .bash_profile .bashrc .tmux.conf .vimrc .xmobarrc .Xresources .xmonad 
 
 .PHONY: all
 all:bash tmux vim xmonad
@@ -24,11 +24,9 @@ xmonad:
 	ln -vsfn ${PWD}/.xmonad ${HOME}/.xmonad
 
 clean:$(foreach f, $(DOT_FILES), unlink-dot-file-$(f))
-
 list:
 	cd brew && . ./dump.sh
 
 unlink-dot-file-%: %
 	echo "Remove symlink $(HOME)/$<"
 	unlink $(HOME)/$<
-
