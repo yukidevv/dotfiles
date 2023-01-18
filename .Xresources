@@ -1,3 +1,4 @@
+#xterm
 xterm*faceName:xft:Ricty Diminished:size=14:antialias=true
 xterm*visualBell: false
 xterm*font:8*13
@@ -10,3 +11,7 @@ xterm*cursorColor: rgb:80/00/00
 xterm*VT100.Translations: #override \
   <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
   Ctrl <KeyPress> V: insert-selection(CLIPBOARD, CUT_BUFFER0, PRIMARY)
+
+#cursor theme
+Xcursor.theme: DMZ-Black
+Xcursor.size: 48
