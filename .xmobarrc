@@ -15,7 +15,7 @@ Config {font="Ricty Diminished"
                ]
        , sepChar = "%"
        , alignSep = "}{"
-       ,template = "%StdinReader% }{%dynnetwork%|<action=`flameshot gui`><fc=#42f599>Prt</fc></action>|<action=`~/bin/gdrive.sh mount`><action=`~/bin/gdrive.sh` button=3><fc=#42f599>G</fc></action></action>|<action=`xclock`>%date%</action>"
+       ,template = "%StdinReader% }{%dynnetwork%|<action=`flameshot gui`><fc=#42f599>Prt</fc></action>|<action=`~/bin/gdrive.sh mount`><action=`~/bin/gdrive.sh` button=3><fc=#42f599>G</fc></action></action>|<action=`pavucontrol`><fc=#42f599>)))</fc></action>|%date%"
 }
 
 -- 配色設定
