@@ -4,5 +4,5 @@ if [[ ${1} = "mount" ]]; then
     echo ${1}
     google-drive-ocamlfuse ~/gdrive
 else
-    fusermount -u /home/yuki/gdrive
+    fusermount -u ~/gdrive
 fi
