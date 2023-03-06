@@ -1,10 +1,20 @@
-DOT_FILES = .bash_profile .bashrc .tmux.conf .vimrc .xmobarrc .Xresources .xmonad bin
+DOT_FILES_mac = .bash_profile .bashrc_mac .tmux.conf .vimrc
 
-.PHONY: all
-all:bash tmux vim xmonad
+DOT_FILES_linux = .bash_profile .bashrc .tmux.conf .vimrc .xmobarrc .Xresources .xmonad bin
 
-.PHONY: bash
-bash:
+.PHONY: linux
+linux:bash_linux tmux vim xmonad
+
+.PHONY: mac
+mac:bash_mac tmux vim
+
+.PHONY:bash_mac
+bash_mac:
+	ln -vsf ${PWD}/.bash_profile ${HOME}/.bash_profile
+	ln -vsf ${PWD}/.bashrc_mac ${HOME}/.bashrc_mac
+
+.PHONY: bash_linux
+bash_linux:
 	ln -vsf ${PWD}/.bash_profile ${HOME}/.bash_profile
 	ln -vsf ${PWD}/.bashrc ${HOME}/.bashrc
 
@@ -25,7 +35,8 @@ xmonad:
 	test -L ${HOME}/bin || rm -rf ${HOME}/bin
 	ln -vsfn ${PWD}/bin ${HOME}/bin
 
-clean:$(foreach f, $(DOT_FILES), unlink-dot-file-$(f))
+clean_linux:$(foreach f, $(DOT_FILES_linux), unlink-dot-file-$(f))
+clean_mac:$(foreach f, $(DOT_FILES_mac), unlink-dot-file-$(f))
 
 list:
 	cd brew && . ./dump.sh
