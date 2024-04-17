@@ -39,3 +39,10 @@ set hlsearch
 
 "color of comment
 highlight Comment ctermfg=green
+
+"カッコ自動入力
+inoremap ( ()<Left>
+inoremap { {}<Left>
+inoremap [ []<Left>
+
+inoremap <silent> jj <ESC>
