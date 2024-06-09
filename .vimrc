@@ -9,10 +9,10 @@ set number
 set expandtab
 
 "行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=2
+set tabstop=4
 
 "行頭でのTab文字の表示幅
-set shiftwidth=2
+set shiftwidth=4
 
 "画面右端に行列番号
 set ruler
@@ -46,3 +46,14 @@ inoremap { {}<Left>
 inoremap [ []<Left>
 
 inoremap <silent> jj <ESC>
+
+"ckfix-windowのデフォルトの表示位置を左端に変更
+autocmd FileType qf wincmd H
+"quickfix-windowを開き、modifiableに設定し、Windowサイズを調整
+function! OpenQuickfixWindow()
+        cw
+        set modifiable
+        vertical resize 70
+endfunction
+
+autocmd QuickfixCmdPost vimgrep call OpenQuickfixWindow()
