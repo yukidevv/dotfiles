@@ -5,19 +5,13 @@ For
 - tmux(.tmux.conf)
 
 ## Usage
-1.`$ cd`  
-2.`$ git clone git@github.com:Yukiprog/dotfiles.git`  
-3.`$ make`
+`$ make`  
 
-Or they can be executed one at a time  
-`$ make bash`  
-`$ make vim`  
-`$ make tmux`  
-`$ make xmonad`
-
-To delete a group of dotfiles, perform the following  
-`$ make clean`  
-
-## Bonus(for Mac)
-Outputs a list of what has been installed by brew  
-`$ make list`  
+```
+help                 helpを表示
+linux                linuxのため
+mac                  macのため
+clean_l              linux関連リンクを削除
+clean_m              mac関連リンクを削除
+list                 Homebrewでインストールしたアプリ一覧
+```

@@ -1,6 +1,6 @@
 DOT_FILES_mac = .bash_profile .bashrc_mac .tmux.conf .vimrc
 
-DOT_FILES_linux = .bash_profile .bashrc .tmux.conf .vimrc .xmobarrc .Xresources .xmonad bin
+DOT_FILES_linux = .bash_profile .bashrc .tmux.conf .vimrc .Xresources
 
 .DEFAULT_GOAL = help
 help: ## helpを表示
@@ -8,7 +8,7 @@ help: ## helpを表示
 .PHONY: help
 
 linux: ## linuxのため
-linux:bash_linux tmux vim xmonad
+linux:bash_linux tmux vim x
 
 mac:  ## macのため
 mac:bash_mac tmux vim
@@ -28,17 +28,12 @@ tmux:
 	ln -vsf ${PWD}/.tmux.conf ${HOME}/.tmux.conf
 
 .PHONY: vim
-vim:	
+vim:
 	ln -vsf ${PWD}/.vimrc ${HOME}/.vimrc
 
-.PHONY: xmonad 
-xmonad:
-	ln -vsf ${PWD}/.xmobarrc ${HOME}/.xmobarrc
+.PHONY: x 
+x:
 	ln -vsf ${PWD}/.Xresources ${HOME}/.Xresources
-	test -L ${HOME}/.xmonad || rm -rf ${HOME}/.xmonad
-	ln -vsfn ${PWD}/.xmonad ${HOME}/.xmonad
-	test -L ${HOME}/bin || rm -rf ${HOME}/bin
-	ln -vsfn ${PWD}/bin ${HOME}/bin
 
 clean_l: $(foreach f, $(DOT_FILES_linux), unlink-dot-file-$(f)) ## linux関連リンクを削除
 clean_m: $(foreach f, $(DOT_FILES_mac), unlink-dot-file-$(f)) ## mac関連リンクを削除
