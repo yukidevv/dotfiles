@@ -31,3 +31,5 @@ export GPG_TTY=$(TTY)
 
 #rust
 . "$HOME/.cargo/env"
+
+export PATH=$PATH:/Users/yuki/Library/Python/3.12/bin
