@@ -8,10 +8,7 @@ For
 `$ make`  
 
 ```
-help                 helpを表示
-linux                linuxのため
-mac                  macのため
-clean_l              linux関連リンクを削除
-clean_m              mac関連リンクを削除
-list                 Homebrewでインストールしたアプリ一覧
+help               helpを表示
+linux              linuxのため
+clean              dotfilesたちを削除します
 ```
