@@ -11,7 +11,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias grep='grep --color=auto'     
 alias vf='vim $(fzf)'
-
+alias t='todo.sh'
 #gpg
 export GPG_TTY=$(tty)
 
