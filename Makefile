@@ -1,12 +1,11 @@
 DOT_FILES_linux = .bash_profile .bashrc .tmux.conf .vimrc .Xresources
 
-.DEFAULT_GOAL = help
-help: ## helpを表示
+.DEFAULT_GOAL = h
+h: ## help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
-.PHONY: help
+.PHONY: h
 
-linux: ## linux
-linux:bash_linux tmux vim x
+l:bash_linux tmux vim x ## linux
 
 .PHONY: bash_linux
 bash_linux:
@@ -25,7 +24,7 @@ vim:
 x:
 	ln -vsf ${PWD}/.Xresources ${HOME}/.Xresources
 
-clean: $(foreach f, $(DOT_FILES_linux), unlink-dot-file-$(f)) ## dotfilesたちを削除します
+c: $(foreach f, $(DOT_FILES_linux), unlink-dot-file-$(f)) ## clean
 unlink-dot-file-%: %
 	echo "Remove symlink $(HOME)/$<"
 	unlink $(HOME)/$<
