@@ -1,14 +1,14 @@
 # dotfiles
-For 
 - bash(.bash_profile,bashrc)
-- vim(.vimrc,.vim)
+- vim(.vimrc)
 - tmux(.tmux.conf)
 
 ## Usage
-`$ make`  
+~~~
+$ make  
+~~~
+~~~
 
-```
-help               helpを表示
-linux              linuxのため
-clean              dotfilesたちを削除します
-```
+l              linux
+c              Remove dotfiles
+~~~
