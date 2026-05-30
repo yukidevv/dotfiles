@@ -1,14 +1,14 @@
-DOT_FILES_linux = .bash_profile .bashrc .tmux.conf .vimrc .Xresources
+DOT_FILES_linux = .bash_profile .bashrc .tmux.conf .vimrc
 
 .DEFAULT_GOAL = h
 h: ## help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 .PHONY: h
 
-l:bash_linux tmux vim x ## linux
+cr:bash tmux vim ## create
 
-.PHONY: bash_linux
-bash_linux:
+.PHONY: bash
+bash:
 	ln -vsf ${PWD}/.bash_profile ${HOME}/.bash_profile
 	ln -vsf ${PWD}/.bashrc ${HOME}/.bashrc
 
@@ -20,11 +20,7 @@ tmux:
 vim:
 	ln -vsf ${PWD}/.vimrc ${HOME}/.vimrc
 
-.PHONY: x 
-x:
-	ln -vsf ${PWD}/.Xresources ${HOME}/.Xresources
-
-c: $(foreach f, $(DOT_FILES_linux), unlink-dot-file-$(f)) ## clean
+cl: $(foreach f, $(DOT_FILES_linux), unlink-dot-file-$(f)) ## clean
 unlink-dot-file-%: %
 	echo "Remove symlink $(HOME)/$<"
 	unlink $(HOME)/$<
