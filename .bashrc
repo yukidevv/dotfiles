@@ -23,3 +23,6 @@ export NVM_DIR="$HOME/.nvm"
 
 HISTFILESIZE=200000
 export PATH="$HOME/.local/bin:$PATH"
+
+# opencode
+export PATH=/home/yuki/.opencode/bin:$PATH
