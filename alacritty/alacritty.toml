@@ -30,6 +30,10 @@ white = '#acb0d0'
 [colors.selection]
 background = '#7aa2f7'
 
+[colors.cursor]
+cursor = '#ff9e64'
+text = '#1a1b26'
+
 [font]
 size = 12.0
 
